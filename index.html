@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Pomodoro SMAN 4 Denpasar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Teknik Pomodoro</h1>
+            <h2>SMAN 4 Denpasar</h2>
+        </header>
+
+        <div class="timer-container">
+            <div class="timer-display">
+                <span id="minutes">25</span>:<span id="seconds">00</span>
+            </div>
+            <div class="timer-status">
+                <span id="status-text">Belajar</span>
+                <span id="cycle-count">Siklus: 1/4</span>
+            </div>
+            <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>
+            <div class="timer-controls">
+                <button id="start-btn" class="btn primary-btn"><i class="fas fa-play"></i> Mulai</button>
+                <button id="pause-btn" class="btn" disabled><i class="fas fa-pause"></i> Jeda</button>
+                <button id="reset-btn" class="btn"><i class="fas fa-redo"></i> Reset</button>
+            </div>
+        </div>
+
+        <div class="settings-container">
+            <h3>Pengaturan</h3>
+            <div class="settings-group">
+                <div class="setting">
+                    <label for="focus-time">Waktu Belajar (menit):</label>
+                    <input type="number" id="focus-time" min="1" max="60" value="25">
+                </div>
+                <div class="setting">
+                    <label for="short-break">Istirahat Pendek (menit):</label>
+                    <input type="number" id="short-break" min="1" max="30" value="5">
+                </div>
+                <div class="setting">
+                    <label for="long-break">Istirahat Panjang (menit):</label>
+                    <input type="number" id="long-break" min="1" max="60" value="15">
+                </div>
+                <div class="setting">
+                    <label for="cycles">Jumlah Siklus:</label>
+                    <input type="number" id="cycles" min="1" max="10" value="4">
+                </div>
+            </div>
+            <button id="save-settings" class="btn secondary-btn">Simpan Pengaturan</button>
+        </div>
+
+        <div class="task-container">
+            <h3>Daftar Tugas</h3>
+            <div class="task-input">
+                <input type="text" id="task-input" placeholder="Tambahkan tugas baru...">
+                <button id="add-task" class="btn secondary-btn">Tambah</button>
+            </div>
+            <ul id="task-list">
+                <!-- Tasks will be added here dynamically -->
+            </ul>
+        </div>
+
+        <div class="info-container">
+            <h3>Tentang Teknik Pomodoro</h3>
+            <p>Teknik Pomodoro adalah metode manajemen waktu yang menggunakan pengatur waktu untuk membagi pekerjaan menjadi interval, biasanya 25 menit, dipisahkan oleh istirahat singkat. Metode ini dikembangkan oleh Francesco Cirillo pada akhir tahun 1980-an.</p>
+            <p>Langkah-langkah dasar dalam teknik Pomodoro adalah:</p>
+            <ol>
+                <li>Pilih tugas yang akan diselesaikan</li>
+                <li>Atur pengatur waktu selama 25 menit (satu "pomodoro")</li>
+                <li>Kerjakan tugas hingga pengatur waktu berbunyi</li>
+                <li>Ambil istirahat pendek (5 menit)</li>
+                <li>Setelah empat pomodoro, ambil istirahat panjang (15-30 menit)</li>
+            </ol>
+        </div>
+
+        <footer>
+            <p>© 2025 SMAN 4 Denpasar | Aplikasi Pomodoro untuk Pembelajaran Efektif</p>
+        </footer>
+    </div>
+
+    <div id="notification-container" class="notification-container">
+        <!-- Notifications will be added here dynamically -->
+    </div>
+
+    <audio id="alarm-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3" preload="auto"></audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
